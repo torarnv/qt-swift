@@ -1,0 +1,28 @@
+included:
+  - Package.swift
+  - Sources
+  - Tools
+  - Plugins
+  - Tests
+  - Examples
+excluded:
+  # Symlinks to Plugins/QtPaths.swift
+  - Plugins/ModuleBuildTests/QtPaths.swift
+  - Plugins/ModuleGenerator/QtPaths.swift
+  - "**/.build"
+disabled_rules:
+  - todo
+  - optional_data_string_conversion
+  - force_try
+identifier_name:
+  excluded: [qt, eq]
+function_body_length:
+  warning: 80
+large_tuple:
+  warning: 3
+cyclomatic_complexity:
+  warning: 15
+opening_brace:
+  ignore_multiline_statement_conditions: true
+  ignore_multiline_function_signatures: true
+  ignore_multiline_type_headers: true

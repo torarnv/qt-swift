@@ -1,0 +1,15 @@
+---
+Name: QtCore
+Tags:
+  - Name: QObject
+    # True Norwegian Reference Type 🤘🏻
+    SwiftImportAs: reference
+    SwiftRetainOp: immortal
+    SwiftReleaseOp: immortal
+    SwiftSafety: unsafe
+
+    # Note: This applies to all derived types as well,
+    # and derived types should _not_ be tagged by their
+    # own SwiftImportAs: reference, as that will act as
+    # an upcast barrier, leaving the two types decoupled
+    # in the inheritance hierarchy.

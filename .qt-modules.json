@@ -1,0 +1,1428 @@
+[
+  {
+    "name" : "Qt3DAnimation",
+    "repo" : "qt3d",
+    "requires" : [
+      "Qt3DCore",
+      "Qt3DRender",
+      "QtCore",
+      "QtGui"
+    ]
+  },
+  {
+    "name" : "Qt3DCore",
+    "repo" : "qt3d",
+    "requires" : [
+      "QtConcurrent",
+      "QtCore",
+      "QtGui",
+      "QtNetwork"
+    ]
+  },
+  {
+    "name" : "Qt3DExtras",
+    "repo" : "qt3d",
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "Qt3DCore",
+      "Qt3DInput",
+      "Qt3DLogic",
+      "Qt3DRender"
+    ]
+  },
+  {
+    "name" : "Qt3DInput",
+    "repo" : "qt3d",
+    "requires" : [
+      "Qt3DCore",
+      "QtCore",
+      "QtGui"
+    ]
+  },
+  {
+    "name" : "Qt3DLogic",
+    "repo" : "qt3d",
+    "requires" : [
+      "Qt3DCore",
+      "QtCore",
+      "QtGui"
+    ]
+  },
+  {
+    "name" : "Qt3DQuick",
+    "repo" : "qt3d",
+    "requires" : [
+      "Qt3DCore",
+      "QtCore",
+      "QtGui",
+      "QtQml",
+      "QtQuick"
+    ]
+  },
+  {
+    "name" : "Qt3DQuickAnimation",
+    "repo" : "qt3d",
+    "requires" : [
+      "Qt3DAnimation",
+      "Qt3DCore",
+      "Qt3DQuick",
+      "Qt3DRender",
+      "QtCore",
+      "QtGui",
+      "QtQml"
+    ]
+  },
+  {
+    "name" : "Qt3DQuickExtras",
+    "repo" : "qt3d",
+    "requires" : [
+      "Qt3DCore",
+      "Qt3DExtras",
+      "Qt3DInput",
+      "Qt3DLogic",
+      "Qt3DQuick",
+      "Qt3DRender",
+      "QtCore",
+      "QtGui",
+      "QtQml"
+    ]
+  },
+  {
+    "requires" : [
+      "Qt3DCore",
+      "Qt3DInput",
+      "Qt3DQuick",
+      "QtCore",
+      "QtGui",
+      "QtQml"
+    ],
+    "repo" : "qt3d",
+    "name" : "Qt3DQuickInput"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qt3d",
+    "name" : "Qt3DQuickLogic"
+  },
+  {
+    "requires" : [
+      "Qt3DCore",
+      "Qt3DQuick",
+      "Qt3DRender",
+      "QtCore",
+      "QtGui",
+      "QtQml"
+    ],
+    "repo" : "qt3d",
+    "name" : "Qt3DQuickRender"
+  },
+  {
+    "requires" : [
+      "Qt3DCore",
+      "Qt3DQuick",
+      "Qt3DRender",
+      "QtCore",
+      "QtGui",
+      "QtQml"
+    ],
+    "repo" : "qt3d",
+    "name" : "Qt3DQuickScene2D"
+  },
+  {
+    "requires" : [
+      "Qt3DCore",
+      "QtCore",
+      "QtQuick"
+    ],
+    "repo" : "qt3d",
+    "name" : "Qt3DQuickScene3D"
+  },
+  {
+    "requires" : [
+      "Qt3DCore",
+      "QtCore",
+      "QtOpenGL"
+    ],
+    "repo" : "qt3d",
+    "name" : "Qt3DRender"
+  },
+  {
+    "requires" : [
+      "QtAppManSharedQmlPrivate"
+    ],
+    "repo" : "qtapplicationmanager",
+    "name" : "QtAppManApplicationQmlPrivate"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtapplicationmanager",
+    "name" : "QtAppManSharedQmlPrivate"
+  },
+  {
+    "requires" : [
+      "QtAppManSharedQmlPrivate"
+    ],
+    "repo" : "qtapplicationmanager",
+    "name" : "QtAppManSystemUIQmlPrivate"
+  },
+  {
+    "requires" : [
+      "QtTest",
+      "QtQml"
+    ],
+    "repo" : "qtapplicationmanager",
+    "name" : "QtAppManTestQmlPrivate"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtNetwork"
+    ],
+    "repo" : "qtconnectivity",
+    "name" : "QtBluetooth"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtQuick",
+      "QtWidgets"
+    ],
+    "repo" : "qtcanvaspainter",
+    "name" : "QtCanvasPainter"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtWidgets",
+      "QtOpenGL",
+      "QtOpenGLWidgets"
+    ],
+    "repo" : "qtcharts",
+    "name" : "QtCharts"
+  },
+  {
+    "requires" : [
+      "QtCharts",
+      "QtCore",
+      "QtGui",
+      "QtQml",
+      "QtQuick",
+      "QtOpenGL"
+    ],
+    "repo" : "qtcharts",
+    "name" : "QtChartsQml"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtNetwork"
+    ],
+    "repo" : "qtcoap",
+    "name" : "QtCoap"
+  },
+  {
+    "requires" : [
+      "QtCore"
+    ],
+    "repo" : "qtbase",
+    "name" : "QtConcurrent"
+  },
+  {
+    "requires" : [
+      "QtPlatform"
+    ],
+    "repo" : "qtbase",
+    "name" : "QtCore"
+  },
+  {
+    "requires" : [
+      "QtCore"
+    ],
+    "repo" : "qt5compat",
+    "name" : "QtCore5Compat"
+  },
+  {
+    "requires" : [
+      "QtCore"
+    ],
+    "repo" : "qtbase",
+    "name" : "QtDBus"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtOpenGL",
+      "QtGui"
+    ],
+    "repo" : "qtdatavisualization",
+    "name" : "QtDataVisualization"
+  },
+  {
+    "requires" : [
+      "QtGui"
+    ],
+    "repo" : "qtdatavisualization",
+    "name" : "QtDataVisualizationQml"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtOpcUa",
+      "QtQuick"
+    ],
+    "repo" : "qtopcua",
+    "name" : "QtDeclarativeOpcua"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtUiPlugin",
+      "QtWidgets",
+      "QtXml",
+      "QtOpenGLWidgets"
+    ],
+    "repo" : "qttools",
+    "name" : "QtDesigner"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtQuick",
+      "QtQuick3D",
+      "QtGui"
+    ],
+    "repo" : "qtgraphs",
+    "name" : "QtGraphs"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtgraphs",
+    "name" : "QtGraphs2DImpl"
+  },
+  {
+    "requires" : [
+      "QtGraphs",
+      "QtQuickWidgets"
+    ],
+    "repo" : "qtgraphs",
+    "name" : "QtGraphsWidgets"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtProtobuf",
+      "QtNetwork"
+    ],
+    "repo" : "qtgrpc",
+    "name" : "QtGrpc"
+  },
+  {
+    "requires" : [
+      "QtQuick"
+    ],
+    "repo" : "qtgrpc",
+    "name" : "QtGrpcQuick"
+  },
+  {
+    "requires" : [
+      "QtCore"
+    ],
+    "repo" : "qtbase",
+    "name" : "QtGui"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtSql",
+      "QtGui",
+      "QtWidgets"
+    ],
+    "repo" : "qttools",
+    "name" : "QtHelp"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtNetwork",
+      "QtWebSockets"
+    ],
+    "repo" : "qthttpserver",
+    "name" : "QtHttpServer"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtQml"
+    ],
+    "repo" : "qtinterfaceframework",
+    "name" : "QtIfControlPanelHelper"
+  },
+  {
+    "requires" : [
+      "QtInterfaceFramework",
+      "QtQml",
+      "QtRemoteObjects"
+    ],
+    "repo" : "qtinterfaceframework",
+    "name" : "QtIfRemoteObjectsHelper"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtQml",
+      "QtQmlModels"
+    ],
+    "repo" : "qtinterfaceframework",
+    "name" : "QtInterfaceFramework"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtLabsAnimation"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtLabsFolderListModel"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtLabsPlatform"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtLabsQmlModels"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtQml"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtLabsSettings"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtLabsSharedImage"
+  },
+  {
+    "requires" : [
+      "QtWidgets"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtLabsStyleKit"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtLabsStyleKitImpl"
+  },
+  {
+    "requires" : [
+      "QtCore"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtLabsSynchronizer"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtLabsWavefrontMesh"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qttools",
+    "name" : "QtLinguist"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtPositioning",
+      "QtPositioningQuick"
+    ],
+    "repo" : "qtlocation",
+    "name" : "QtLocation"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtlottie",
+    "name" : "QtLottie"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtlottie",
+    "name" : "QtLottieVectorImageHelpers"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtNetwork",
+      "QtWebSockets"
+    ],
+    "repo" : "qtmqtt",
+    "name" : "QtMqtt"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtNetwork"
+    ],
+    "repo" : "qtmultimedia",
+    "name" : "QtMultimedia"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtMultimedia",
+      "QtQuick"
+    ],
+    "repo" : "qtmultimedia",
+    "name" : "QtMultimediaQuick"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtMultimedia",
+      "QtWidgets"
+    ],
+    "repo" : "qtmultimedia",
+    "name" : "QtMultimediaWidgets"
+  },
+  {
+    "requires" : [
+      "QtCore"
+    ],
+    "repo" : "qtbase",
+    "name" : "QtNetwork"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtNetwork"
+    ],
+    "repo" : "qtnetworkauth",
+    "name" : "QtNetworkAuth"
+  },
+  {
+    "requires" : [
+      "QtCore"
+    ],
+    "repo" : "qtconnectivity",
+    "name" : "QtNfc"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtNetwork"
+    ],
+    "repo" : "qtopcua",
+    "name" : "QtOpcUa"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtNetwork"
+    ],
+    "repo" : "qtopenapi",
+    "name" : "QtOpenApiCommon"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui"
+    ],
+    "repo" : "qtbase",
+    "name" : "QtOpenGL"
+  },
+  {
+    "requires" : [
+      "QtOpenGL",
+      "QtWidgets"
+    ],
+    "repo" : "qtbase",
+    "name" : "QtOpenGLWidgets"
+  },
+  {
+    "requires" : [
+      "QtCore"
+    ],
+    "repo" : "qtpositioning",
+    "name" : "QtPositioning"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtPositioning",
+      "QtQml",
+      "QtQuick"
+    ],
+    "repo" : "qtpositioning",
+    "name" : "QtPositioningQuick"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtWidgets"
+    ],
+    "repo" : "qtbase",
+    "name" : "QtPrintSupport"
+  },
+  {
+    "requires" : [
+      "QtCore"
+    ],
+    "repo" : "qtgrpc",
+    "name" : "QtProtobuf"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtgrpc",
+    "name" : "QtProtobufQtCoreTypes"
+  },
+  {
+    "requires" : [
+      "QtProtobufQtCoreTypes"
+    ],
+    "repo" : "qtgrpc",
+    "name" : "QtProtobufQtGuiTypes"
+  },
+  {
+    "requires" : [
+      "QtQuick"
+    ],
+    "repo" : "qtgrpc",
+    "name" : "QtProtobufQuick"
+  },
+  {
+    "requires" : [
+      "QtProtobuf"
+    ],
+    "repo" : "qtgrpc",
+    "name" : "QtProtobufWellKnownTypes"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtQmlIntegration",
+      "QtNetwork"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQml"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtQml"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQmlCompiler"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtQml"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQmlCore"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtQml"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQmlDesignSupport"
+  },
+  {
+    "requires" : [
+      "QtCore"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQmlIntegration"
+  },
+  {
+    "requires" : [
+      "QtSql"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQmlLocalStorage"
+  },
+  {
+    "requires" : [
+      "QtQml",
+      "QtQmlModels",
+      "QtQmlWorkerScript"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQmlMeta"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtQml"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQmlModels"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtNetwork",
+      "QtQml"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQmlNetwork"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtQml"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQmlWorkerScript"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtQml"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQmlXmlListModel"
+  },
+  {
+    "requires" : [
+      "QtOpenGL",
+      "QtCore",
+      "QtGui",
+      "QtQml"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuick"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtQml",
+      "QtQuick",
+      "QtQuick3DRuntimeRender"
+    ],
+    "repo" : "qtquick3d",
+    "name" : "QtQuick3D"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtQml",
+      "QtQuick3DUtils"
+    ],
+    "repo" : "qtquick3d",
+    "name" : "QtQuick3DAssetImport"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtQuick"
+    ],
+    "repo" : "qtquick3d",
+    "name" : "QtQuick3DAssetUtils"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtquick3d",
+    "name" : "QtQuick3DEffects"
+  },
+  {
+    "requires" : [
+      "QtQml",
+      "QtQuick"
+    ],
+    "repo" : "qtquick3d",
+    "name" : "QtQuick3DHelpers"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtquick3d",
+    "name" : "QtQuick3DHelpersImpl"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtQuick",
+      "QtQuick3DRuntimeRender"
+    ],
+    "repo" : "qtquick3d",
+    "name" : "QtQuick3DIblBaker"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtQml",
+      "QtQuick",
+      "QtQuick3DRuntimeRender",
+      "QtQuick3DAssetImport",
+      "QtQuick3D",
+      "QtQuick3DParticles"
+    ],
+    "repo" : "qtquick3d",
+    "name" : "QtQuick3DParticleEffects"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtQml",
+      "QtQuick",
+      "QtQuick3DRuntimeRender",
+      "QtQuick3DAssetImport",
+      "QtQuick3D"
+    ],
+    "repo" : "qtquick3d",
+    "name" : "QtQuick3DParticles"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtQml",
+      "QtQuick",
+      "QtQuick3D"
+    ],
+    "repo" : "qtquick3dphysics",
+    "name" : "QtQuick3DPhysics"
+  },
+  {
+    "requires" : [
+      "QtQml",
+      "QtQuick",
+      "QtQuick3D"
+    ],
+    "repo" : "qtquick3dphysics",
+    "name" : "QtQuick3DPhysicsHelpers"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtQuick",
+      "QtQuick3DUtils",
+      "QtShaderTools",
+      "QtConcurrent"
+    ],
+    "repo" : "qtquick3d",
+    "name" : "QtQuick3DRuntimeRender"
+  },
+  {
+    "requires" : [
+      "QtSpatialAudio"
+    ],
+    "repo" : "qtmultimedia",
+    "name" : "QtQuick3DSpatialAudio"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui"
+    ],
+    "repo" : "qtquick3d",
+    "name" : "QtQuick3DUtils"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtQml",
+      "QtQuick",
+      "QtQuick3D"
+    ],
+    "repo" : "qtquick3d",
+    "name" : "QtQuick3DXr"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtQuick"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickControls2"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickControls2Basic"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickControls2BasicStyleImpl"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickControls2FluentWinUI3"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickControls2FluentWinUI3StyleImpl"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickControls2Fusion"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickControls2FusionStyleImpl"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickControls2IOS"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickControls2IOSStyleImpl"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickControls2Imagine"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickControls2ImagineStyleImpl"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtQuick"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickControls2Impl"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickControls2MacOSStyleImpl"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickControls2Macos"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickControls2Material"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickControls2MaterialStyleImpl"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickControls2Native"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickControls2Universal"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickControls2UniversalStyleImpl"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtQuick"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickDialogs2"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtQuick"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickDialogs2QuickImpl"
+  },
+  {
+    "requires" : [
+      "QtCore"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickDialogs2Utils"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtQml",
+      "QtQuick"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickEffects"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtQml"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickLayouts"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtQml",
+      "QtQuick",
+      "QtQuickTemplates2"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickNativeStyle"
+  },
+  {
+    "requires" : [
+      "QtQuick"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickParticles"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtQml"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickShapes"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtQml"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickShapesDesignHelpers"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtQuick",
+      "QtQmlModels"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickTemplates2"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtTest"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickTest"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtQml",
+      "QtQuick"
+    ],
+    "repo" : "qtquicktimeline",
+    "name" : "QtQuickTimeline"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtQml",
+      "QtQuick",
+      "QtQuickTimeline"
+    ],
+    "repo" : "qtquicktimeline",
+    "name" : "QtQuickTimelineBlendTrees"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickVectorImage"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickVectorImageHelpers"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtQml",
+      "QtQuick",
+      "QtWidgets"
+    ],
+    "repo" : "qtdeclarative",
+    "name" : "QtQuickWidgets"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtNetwork"
+    ],
+    "repo" : "qtremoteobjects",
+    "name" : "QtRemoteObjects"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtQml",
+      "QtRemoteObjects"
+    ],
+    "repo" : "qtremoteobjects",
+    "name" : "QtRemoteObjectsQml"
+  },
+  {
+    "requires" : [
+      "QtCore"
+    ],
+    "repo" : "qtremoteobjects",
+    "name" : "QtRepParser"
+  },
+  {
+    "requires" : [
+      "QtCore"
+    ],
+    "repo" : "qtscxml",
+    "name" : "QtScxml"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtQml",
+      "QtScxml"
+    ],
+    "repo" : "qtscxml",
+    "name" : "QtScxmlQml"
+  },
+  {
+    "requires" : [
+      "QtCore"
+    ],
+    "repo" : "qtsensors",
+    "name" : "QtSensors"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtQml",
+      "QtSensors"
+    ],
+    "repo" : "qtsensors",
+    "name" : "QtSensorsQuick"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtNetwork",
+      "QtSerialPort"
+    ],
+    "repo" : "qtserialbus",
+    "name" : "QtSerialBus"
+  },
+  {
+    "requires" : [
+      "QtCore"
+    ],
+    "repo" : "qtserialport",
+    "name" : "QtSerialPort"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui"
+    ],
+    "repo" : "qtshadertools",
+    "name" : "QtShaderTools"
+  },
+  {
+    "requires" : [
+      "QtMultimedia"
+    ],
+    "repo" : "qtmultimedia",
+    "name" : "QtSpatialAudio"
+  },
+  {
+    "requires" : [
+      "QtCore"
+    ],
+    "repo" : "qtbase",
+    "name" : "QtSql"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui"
+    ],
+    "repo" : "qtscxml",
+    "name" : "QtStateMachine"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtQml",
+      "QtStateMachine"
+    ],
+    "repo" : "qtscxml",
+    "name" : "QtStateMachineQml"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui"
+    ],
+    "repo" : "qtsvg",
+    "name" : "QtSvg"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtSvg",
+      "QtWidgets"
+    ],
+    "repo" : "qtsvg",
+    "name" : "QtSvgWidgets"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtConcurrent",
+      "QtNetwork"
+    ],
+    "repo" : "qttasktree",
+    "name" : "QtTaskTree"
+  },
+  {
+    "requires" : [
+      "QtCore"
+    ],
+    "repo" : "qtbase",
+    "name" : "QtTest"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtMultimedia"
+    ],
+    "repo" : "qtspeech",
+    "name" : "QtTextToSpeech"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtWidgets"
+    ],
+    "repo" : "qttools",
+    "name" : "QtUiPlugin"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtWidgets",
+      "QtOpenGLWidgets"
+    ],
+    "repo" : "qttools",
+    "name" : "QtUiTools"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtQml",
+      "QtQuick"
+    ],
+    "repo" : "qtvirtualkeyboard",
+    "name" : "QtVirtualKeyboard"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtQml",
+      "QtQuick",
+      "QtVirtualKeyboard"
+    ],
+    "repo" : "qtvirtualkeyboard",
+    "name" : "QtVirtualKeyboardQml"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtvirtualkeyboard",
+    "name" : "QtVirtualKeyboardSettings"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui",
+      "QtNetwork"
+    ],
+    "repo" : "qtvncserver",
+    "name" : "QtVncServer"
+  },
+  {
+    "requires" : [
+      "QtQml"
+    ],
+    "repo" : "qtwebchannel",
+    "name" : "QtWebChannel"
+  },
+  {
+    "requires" : [
+
+    ],
+    "repo" : "qtwebchannel",
+    "name" : "QtWebChannelQuick"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtNetwork"
+    ],
+    "repo" : "qtwebsockets",
+    "name" : "QtWebSockets"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui"
+    ],
+    "repo" : "qtwebview",
+    "name" : "QtWebView"
+  },
+  {
+    "requires" : [
+      "QtQuick",
+      "QtQmlModels",
+      "QtOpenGL"
+    ],
+    "repo" : "qtwebview",
+    "name" : "QtWebViewQuick"
+  },
+  {
+    "requires" : [
+      "QtCore",
+      "QtGui"
+    ],
+    "repo" : "qtbase",
+    "name" : "QtWidgets"
+  },
+  {
+    "requires" : [
+      "QtCore"
+    ],
+    "repo" : "qtbase",
+    "name" : "QtXml"
+  }
+]
