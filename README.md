@@ -36,8 +36,9 @@ The package has been tested on [![macOS][macos-badge]][ci] and [![Linux][linux-b
 
 ## Installation
 
-In Xcode, _File → Add Package Dependencies_, pointing to `https://github.com/torarnv/qt-swift.git`,
-or add the package to the dependencies in your `Package.swift`:
+### Swift Package Manager
+
+Add the package to the dependencies in your `Package.swift`:
 
 ```swift
 dependencies: [
@@ -60,6 +61,24 @@ every target that imports Qt:
     ]
 )
 ```
+
+### Xcode project
+
+Choose _File → Add Package Dependencies_, enter `https://github.com/torarnv/qt-swift.git`,
+and add the Qt modules you need to your app target.
+
+Then turn on the same Swift settings as above, using a configuration file.
+Choose _File → New → File from Template_, pick _Configuration Settings File_,
+and name it `Qt.xcconfig`:
+
+```
+SWIFT_OBJC_INTEROP_MODE = objcxx
+OTHER_SWIFT_FLAGS = $(inherited) -enable-experimental-feature ImportCxxMembersLazily
+```
+
+Select the project in the navigator, open the _Info_ tab, and under
+_Configurations_ set `Qt` as the configuration file of your app target,
+for both _Debug_ and _Release_.
 
 ## Usage
 
