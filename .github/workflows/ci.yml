@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  macos:
+    name: macOS
+    runs-on: xcode-27
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Qt and SwiftLint
+        run: brew install qt swiftlint
+
+      - name: Lint
+        run: make lint
+
+      - name: Build
+        run: make build
+
+      - name: Test
+        run: make check
+
+  linux:
+    name: Linux
+    runs-on: ubuntu-26.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Qt
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y 'qt6-*-dev'
+
+      - name: Install Swift toolchain
+        run: |
+          curl -fsSLO https://download.swift.org/swiftly/linux/swiftly-$(uname -m).tar.gz
+          tar zxf swiftly-$(uname -m).tar.gz
+          ./swiftly init --quiet-shell-followup --assume-yes --skip-install
+          . ~/.local/share/swiftly/env.sh
+          echo "$SWIFTLY_BIN_DIR" >> "$GITHUB_PATH"
+          swiftly install --use --assume-yes --post-install-file=post-install.sh
+          if [ -s post-install.sh ]; then sudo bash post-install.sh; fi
+
+      - name: Build
+        run: make build
+
+      - name: Test
+        run: make check
