@@ -2,3 +2,4 @@
 // SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only
 
 @_exported import QtWidgets
+internal import QtWidgets_Private

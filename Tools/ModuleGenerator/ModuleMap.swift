@@ -35,17 +35,14 @@ private func moduleDeclarations(for qtModule: QtModule) -> String {
 
     var declarations = [publicModule]
 
-    // Private headers in Qt are not ready to be modularized
-    let modularizePrivateHeaders = false
-    if modularizePrivateHeaders || !qtModule.overlayPrivateHeaders.isEmpty {
-        var privateModule = ModuleDeclaration(name: "\(qtModule.name)_Private")
-        privateModule.body += qtModule.overlayPrivateHeaders.map { "header \"\($0)\"" }
-        if modularizePrivateHeaders {
-            privateModule.body += headerDeclarations(for: qtModule.headers?.privateHeaders ?? [])
-        }
-        privateModule.body += linkDeclarations
-        declarations.append(privateModule)
-    }
+    var privateModule = ModuleDeclaration(name: "\(qtModule.name)_Private")
+    privateModule.body += qtModule.overlayPrivateHeaders.map { "header \"\($0)\"" }
+    #if false
+        // Private headers in Qt are not ready to be modularized
+        privateModule.body += headerDeclarations(for: qtModule.headers?.privateHeaders ?? [])
+    #endif
+    privateModule.body += linkDeclarations
+    declarations.append(privateModule)
 
     return declarations.map(\.text).joined(separator: "\n\n")
 }
