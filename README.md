@@ -30,8 +30,8 @@ local build.
 
 The package has been tested on [![macOS][macos-badge]][ci] and [![Linux][linux-badge]][ci]
 
-[macos-badge]: https://img.shields.io/github/checks-status/torarnv/qt-swift/main?nameFilter=macOS&label=macOS&logo=apple
-[linux-badge]: https://img.shields.io/github/checks-status/torarnv/qt-swift/main?nameFilter=Linux&label=Linux&logo=linux&logoColor=white
+[macos-badge]: https://img.shields.io/github/check-runs/torarnv/qt-swift/main?nameFilter=macOS&label=macOS&logo=apple
+[linux-badge]: https://img.shields.io/github/check-runs/torarnv/qt-swift/main?nameFilter=Linux&label=Linux&logo=linux&logoColor=white
 [ci]: https://github.com/torarnv/qt-swift/actions/workflows/ci.yml
 
 ## Installation
