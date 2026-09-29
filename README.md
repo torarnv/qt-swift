@@ -6,7 +6,7 @@ or `import QtQuick` and call Qt's C++ APIs directly from Swift code.
 
 ## Requirements
 
-### Swift 6.3 or later
+### Swift 6.4 or later
 
 Shipped with Xcode, or installed via [`swiftly`](https://github.com/swiftlang/swiftly).
 
