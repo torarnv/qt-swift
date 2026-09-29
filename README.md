@@ -110,6 +110,26 @@ let text = String(title)
 print(QString("Hællø 🌍"))
 ```
 
+## Known Issues
+
+* `swift build` runs the module generator plugin on every target in Qt,
+  regardless of which products the application depends on
+  ([swift-package-manager#10590](https://github.com/swiftlang/swift-package-manager/issues/10590))
+  * The module generator tool itself is not run, but the plugin invocations alone
+    add about 6 seconds to every build (even clean incremental ones)
+  * To work around this, limit the products reported by the Qt for Swift package
+    to those you depend on, via `QT_SWIFT_MODULES="QtQuick" swift build`
+  * This is not an issue in Xcode, where the build plan prunes unused products
+    before running build tool plugins
+* Swift's C++ importer eagerly imports members, resulting in import cycles
+  * For Swift 6.5 the default has been changed to import members lazily
+  * Ealier toolchains need to explicitly set `.enableExperimentalFeature("ImportCxxMembersLazily")`
+* Swift's C++ importer does not import constructors with optional arguments in reference types
+  * These are very common in Qt, due to the default parent of e.g. `QObject(QObject *parent = nullptr)`
+  * Constructors with non-optional arguments are imported as regular `init`
+  * As a workaround, build a custom Swift toolchain with
+    [swift#92685](https://github.com/swiftlang/swift/pull/92685) applied
+
 ## Examples
 
 The `Examples` directory holds small projects you can build and run:
