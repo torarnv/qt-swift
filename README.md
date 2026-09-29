@@ -80,7 +80,7 @@ Select the project in the navigator, open the _Info_ tab, and under
 _Configurations_ set `Qt` as the configuration file of your app target,
 for both _Debug_ and _Release_.
 
-## Usage
+## Features
 
 ### Applications
 
