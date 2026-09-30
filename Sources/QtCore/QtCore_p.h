@@ -7,8 +7,6 @@
 #include <QtCore/qstring.h>
 #include <QtCore/qversionnumber.h>
 
-const char16_t *qStringConstData(const QString &string);
-
 QVersionNumber qLibraryInfoVersion();
 
 namespace QtPrivate {

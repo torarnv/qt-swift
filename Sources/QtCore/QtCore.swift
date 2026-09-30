@@ -31,8 +31,9 @@ extension QVersionNumber: CustomStringConvertible {
 extension String {
     public init(_ qstring: QString) {
         self = withExtendedLifetime(qstring) {
-            let utf16 = UnsafeBufferPointer(
-                start: qStringConstData(qstring),
+            let utf16 = unsafe UnsafeBufferPointer(
+                start: UnsafeRawPointer(qstring.__constDataUnsafe())?
+                    .assumingMemoryBound(to: UInt16.self),
                 count: Int(qstring.size()))
             return String(decoding: utf16, as: UTF16.self)
         }
