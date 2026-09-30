@@ -8,7 +8,7 @@ struct HelloWidgets: QtApplication {
     init() {
         let widget = QSizeGrip(nil)
         #if compiler(>=6.5)
-            widget.setWindowTitle("Hello 🌍 from Qt \(qtVersion())")
+            widget.setWindowTitle("Hello 🌍 from Qt \(QLibraryInfo.version())")
         #endif
         widget.resize(400, 300)
         widget.show()

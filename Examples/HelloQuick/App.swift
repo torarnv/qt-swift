@@ -10,7 +10,7 @@ struct HelloQuick: QtApplication {
         let quickView = QQuickView(nil, nil)
 
         #if compiler(>=6.5)
-            quickView.setTitle("Hello 🌍 from Qt \(qtVersion())")
+            quickView.setTitle("Hello 🌍 from Qt \(QLibraryInfo.version())")
             quickView.setResizeMode(QQuickView.SizeRootObjectToView)
         #else
             quickView.setResizeMode(QQuickView.ResizeMode(rawValue: 1))

@@ -3,4 +3,4 @@
 
 import QtCore
 
-print("Hello 🌍 from Qt \(qtVersion())")
+print("Hello 🌍 from Qt \(QLibraryInfo.version())")

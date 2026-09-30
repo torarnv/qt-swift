@@ -13,3 +13,11 @@ Tags:
     # own SwiftImportAs: reference, as that will act as
     # an upcast barrier, leaving the two types decoupled
     # in the inheritance hierarchy.
+
+  - Name: QLibraryInfo
+    Methods:
+      # Marked Q_DECL_CONST_FUNCTION, which makes Swift drop the call.
+      # See https://github.com/swiftlang/swift/issues/92761
+      # We provide a working version() from the overlay instead
+      - Name: version
+        SwiftPrivate: true

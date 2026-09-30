@@ -14,9 +14,17 @@
 
 #include "QtCore_p.h"
 
+#include <QtCore/qlibraryinfo.h>
+
 const char16_t *qStringConstData(const QString &string)
 {
     return reinterpret_cast<const char16_t *>(string.constData());
+}
+
+// Workaround for https://github.com/swiftlang/swift/issues/92761
+QVersionNumber qLibraryInfoVersion()
+{
+    return QLibraryInfo::version();
 }
 
 namespace QtPrivate {

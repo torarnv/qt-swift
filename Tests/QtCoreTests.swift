@@ -30,6 +30,26 @@ import Testing
     #expect(String(interpolated) == "Qt 6 rules")
 }
 
+// MARK: - Version
+
+@Test func qlibraryInfoVersionIsInitialized() {
+    // Swift drops calls to Q_DECL_CONST_FUNCTION functions returning C++
+    // types, which left the result as uninitialized memory.
+    let version = QLibraryInfo.version()
+    #expect(!version.isNull())
+    #expect(version.majorVersion() >= 6)
+    #expect(version.segmentCount() >= 3)
+}
+
+@Test func qversionNumberConvertsToString() {
+    let version = QLibraryInfo.version()
+    let expected = [version.majorVersion(), version.minorVersion(), version.microVersion()]
+        .map(String.init)
+        .joined(separator: ".")
+    #expect(version.description == expected)
+    #expect("\(version)" == expected)
+}
+
 // MARK: - Objects
 
 @Test func qobjectImportsAsReferenceType() {

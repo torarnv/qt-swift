@@ -13,8 +13,17 @@ internal import QtCore_Private
     @_exported import Foundation
 #endif
 
-public func qtVersion() -> String {
-    return String(cString: qVersion())
+extension QLibraryInfo {
+    // Workaround for https://github.com/swiftlang/swift/issues/92761
+    public static func version() -> QVersionNumber {
+        qLibraryInfoVersion()
+    }
+}
+
+extension QVersionNumber: CustomStringConvertible {
+    public var description: String {
+        String(toString())
+    }
 }
 
 // MARK: - Strings
