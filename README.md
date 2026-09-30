@@ -129,6 +129,14 @@ print(QString("Hællø 🌍"))
   * Constructors with non-optional arguments are imported as regular `init`
   * As a workaround, build a custom Swift toolchain with
     [swift#92685](https://github.com/swiftlang/swift/pull/92685) applied
+* Swift 6.4 cannot upcast a derived reference type to its base class, e.g. `QWidget` to `QObject`
+  ([swift#80231](https://github.com/swiftlang/swift/issues/80231))
+  * This makes APIs taking a base class pointer unreachable from a subclass-typed value
+  * The fix is in Swift main snapshots, so please use a recent snapshot if possible
+  * As a workaround for 6.4 you can use `unsafeBitCast(widget, to: QObject.self)` for the primary base
+* Swift 6.4 can crash the compiler when calling an inherited method with an unnamed parameter, e.g. `quickView.setTitle("...")`
+  * The fix is in Swift main snapshots, so please use a recent snapshot if possible
+  * As a workaround for 6.4 you can call the method on the base type, e.g. `unsafeBitCast(quickView, to: QWindow.self).setTitle("Hello")`
 
 ## Examples
 
