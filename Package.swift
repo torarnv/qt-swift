@@ -182,35 +182,40 @@ let testSources: [String] =
         atPath: Package.dir.appendingPathComponent("Tests").path)) ?? [])
     .filter { $0.hasSuffix(".swift") }
 
-var moduleWarningSettings: [SwiftSetting] = [
-    .unsafeFlags([
-        "-Xcc", "-fdiagnostics-absolute-paths",
-        "-Xcc", "-fdiagnostics-show-note-include-stack"
-    ]),
-    .unsafeFlags([
-        "-Xcc", "-Wincomplete-module",
-        "-Xcc", "-Wincomplete-umbrella",
-        "-Xcc", "-Watimport-in-framework-header",
-        "-Xcc", "-Wnon-modular-include-in-module",
-        "-Xcc", "-Wnon-modular-include-in-framework-module",
-        "-Xcc", "-Wmodule-map-path-outside-directory",
-        "-Xcc", "-Wquoted-include-in-framework-header",
-        "-Xcc", "-Wframework-include-private-from-public",
-        "-Xcc", "-Wincomplete-framework-module-declaration"
-    ]),
-    .unsafeFlags(["-Xcc", "-Werror"], .when(configuration: .release))
-]
+extension SwiftSetting {
+    static let moduleWarnings: [SwiftSetting] = {
+        var settings: [SwiftSetting] = [
+            .unsafeFlags([
+                "-Xcc", "-fdiagnostics-absolute-paths",
+                "-Xcc", "-fdiagnostics-show-note-include-stack"
+            ]),
+            .unsafeFlags([
+                "-Xcc", "-Wincomplete-module",
+                "-Xcc", "-Wincomplete-umbrella",
+                "-Xcc", "-Watimport-in-framework-header",
+                "-Xcc", "-Wnon-modular-include-in-module",
+                "-Xcc", "-Wnon-modular-include-in-framework-module",
+                "-Xcc", "-Wmodule-map-path-outside-directory",
+                "-Xcc", "-Wquoted-include-in-framework-header",
+                "-Xcc", "-Wframework-include-private-from-public",
+                "-Xcc", "-Wincomplete-framework-module-declaration"
+            ]),
+            .unsafeFlags(["-Xcc", "-Werror"], .when(configuration: .release))
+        ]
 
-#if os(Linux)
-    // Silence warnings that result from non-modularized system headers
-    moduleWarningSettings.append(
-        .unsafeFlags([
-            "-Xcc", "-Wno-non-modular-include-in-module",
-            "-Xcc", "-Wno-deprecated-builtins",
-            "-Xcc", "-Wno-ignored-attributes",
-            "-Xcc", "-Wno-module-import-in-extern-c"
-        ]))
-#endif
+        #if os(Linux)
+            // Silence warnings that result from non-modularized system headers
+            settings.append(
+                .unsafeFlags([
+                    "-Xcc", "-Wno-non-modular-include-in-module",
+                    "-Xcc", "-Wno-deprecated-builtins",
+                    "-Xcc", "-Wno-ignored-attributes",
+                    "-Xcc", "-Wno-module-import-in-extern-c"
+                ]))
+        #endif
+        return settings
+    }()
+}
 
 package.targets += [
     .plugin(
@@ -227,7 +232,7 @@ package.targets += [
         dependencies: Array(Set(modules.map { productTarget($0) }))
             .sorted().map { .target(name: $0) },
         path: "Tests",
-        swiftSettings: SwiftSetting.common + moduleWarningSettings + [
+        swiftSettings: SwiftSetting.common + SwiftSetting.moduleWarnings + [
             // Make sure we see module map warnings, even if we
             // declare our modules as system modules.
             .unsafeFlags(
@@ -250,7 +255,7 @@ for module in modules {
             name: "\(name)Tests",
             dependencies: [.target(name: productTarget(module))],
             path: "Tests",
-            swiftSettings: SwiftSetting.common + moduleWarningSettings + [
+            swiftSettings: SwiftSetting.common + SwiftSetting.moduleWarnings + [
                 .unsafeFlags([
                     "-Xcc", "-Wsystem-headers-in-module=\(name)"
                 ])
