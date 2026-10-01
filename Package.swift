@@ -171,6 +171,15 @@ extension SwiftSetting {
             // Enabled by default in Swift 6.5, but 6.4 needs opt-in
             settings.append(.enableExperimentalFeature("ImportCxxMembersLazily"))
         #endif
+        settings += [
+            // Warnings as errors in release
+            .treatAllWarnings(as: .error, .when(configuration: .release)),
+            .unsafeFlags(
+                [
+                    // https://codereview.qt-project.org/c/qt/qtbase/+/724619
+                    "-Xcc", "-Wno-implicit-function-declaration"
+                ], .when(configuration: .release))
+        ]
         return settings
     }()
 }
@@ -200,7 +209,12 @@ extension SwiftSetting {
                 "-Xcc", "-Wframework-include-private-from-public",
                 "-Xcc", "-Wincomplete-framework-module-declaration"
             ]),
-            .unsafeFlags(["-Xcc", "-Werror"], .when(configuration: .release))
+            .unsafeFlags(
+                [
+                    "-Xcc", "-Werror",
+                    // We're not entirely warning clean for quoted includes
+                    "-Xcc", "-Wno-error=quoted-include-in-framework-header"
+                ], .when(configuration: .release))
         ]
 
         #if os(Linux)

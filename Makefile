@@ -1,8 +1,10 @@
+export CONFIGURATION ?= debug
+
 build:
-	@swift build
+	@swift build -c $$CONFIGURATION
 
 check:
-	@swift test
+	@swift test -c $$CONFIGURATION
 
 lint:
 	@swift format lint --recursive .
