@@ -152,7 +152,7 @@ func moduleTargets(for module: QtModule) -> [Target] {
             name: name,
             dependencies: overlayDependencies,
             path: "Sources/\(name)",
-            swiftSettings: SwiftSetting.common
+            swiftSettings: SwiftSetting.common + [.strictMemorySafety()]
         )
         .sourcesMatching("*.swift", among: moduleSources))
 

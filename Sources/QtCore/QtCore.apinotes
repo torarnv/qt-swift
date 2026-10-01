@@ -21,3 +21,17 @@ Tags:
       # We provide a working version() from the overlay instead
       - Name: version
         SwiftPrivate: true
+
+
+  - Name: QVersionNumber
+    # QList<int> * in SegmentStorage trips up the importer,
+    # giving it unknown escapability, and marking it unsafe
+    SwiftSafety: safe
+    # FIXME: Ideally we should mark as SwiftEscapable: true
+    # instead, but Swift 6.4.0 picks up the annotation for
+    # forward declarations as well, resulting in errors.
+
+  - Name: QString
+    # Tripped up by QString's Data *d and char16_t *ptr
+    SwiftSafety: safe
+    # FIXME: Use SwiftEscapable: true for Swift > 6.4.0

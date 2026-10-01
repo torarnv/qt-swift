@@ -35,7 +35,7 @@ extension String {
                 start: UnsafeRawPointer(qstring.__constDataUnsafe())?
                     .assumingMemoryBound(to: UInt16.self),
                 count: Int(qstring.size()))
-            return String(decoding: utf16, as: UTF16.self)
+            return unsafe String(decoding: utf16, as: UTF16.self)
         }
     }
 }
@@ -50,8 +50,8 @@ extension QString {
     public init(_ string: String) {
         var string = string
         self = string.withUTF8 { utf8 in
-            utf8.withMemoryRebound(to: CChar.self) {
-                QString.fromUtf8($0.baseAddress, qsizetype($0.count))
+            unsafe utf8.withMemoryRebound(to: CChar.self) {
+                unsafe QString.fromUtf8($0.baseAddress, qsizetype($0.count))
             }
         }
     }
@@ -76,7 +76,7 @@ public protocol QtApplication {
 extension QtApplication {
     @MainActor
     public static func main() {
-        qCreateApplication(CommandLine.argc, CommandLine.unsafeArgv)
+        unsafe qCreateApplication(CommandLine.argc, CommandLine.unsafeArgv)
         let application = Self()
         exit(withExtendedLifetime(application) { qExecApplication() })
     }
