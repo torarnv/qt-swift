@@ -152,7 +152,7 @@ func moduleTargets(for module: QtModule) -> [Target] {
             name: name,
             dependencies: overlayDependencies,
             path: "Sources/\(name)",
-            swiftSettings: [.interoperabilityMode(.Cxx)]
+            swiftSettings: SwiftSetting.common
         )
         .sourcesMatching("*.swift", among: moduleSources))
 
@@ -162,6 +162,17 @@ func moduleTargets(for module: QtModule) -> [Target] {
 package.products = modules.map { module in
     let targets = Set([productTarget(module)] + dependencyProductTargets(module))
     return .library(name: module.name, targets: targets.sorted())
+}
+
+extension SwiftSetting {
+    static let common: [SwiftSetting] = {
+        var settings: [SwiftSetting] = [.interoperabilityMode(.Cxx)]
+        #if compiler(<6.5)
+            // Enabled by default in Swift 6.5, but 6.4 needs opt-in
+            settings.append(.enableExperimentalFeature("ImportCxxMembersLazily"))
+        #endif
+        return settings
+    }()
 }
 
 // MARK: - Tests
@@ -216,16 +227,14 @@ package.targets += [
         dependencies: Array(Set(modules.map { productTarget($0) }))
             .sorted().map { .target(name: $0) },
         path: "Tests",
-        swiftSettings: [
-            .interoperabilityMode(.Cxx),
-            .enableExperimentalFeature("ImportCxxMembersLazily"),
+        swiftSettings: SwiftSetting.common + moduleWarningSettings + [
             // Make sure we see module map warnings, even if we
             // declare our modules as system modules.
             .unsafeFlags(
                 modules.flatMap { module in
                     ["-Xcc", "-Wsystem-headers-in-module=\(module.name)"]
                 })
-        ] + moduleWarningSettings,
+        ],
         plugins: [.plugin(name: "TestGeneratorPlugin")]
     )
     .sourcesMatching("ModuleBuildTests.swift", among: testSources)
@@ -241,13 +250,11 @@ for module in modules {
             name: "\(name)Tests",
             dependencies: [.target(name: productTarget(module))],
             path: "Tests",
-            swiftSettings: [
-                .interoperabilityMode(.Cxx),
-                .enableExperimentalFeature("ImportCxxMembersLazily"),
+            swiftSettings: SwiftSetting.common + moduleWarningSettings + [
                 .unsafeFlags([
                     "-Xcc", "-Wsystem-headers-in-module=\(name)"
                 ])
-            ] + moduleWarningSettings
+            ]
         )
         .sourcesMatching(testFile, among: testSources)
     )
