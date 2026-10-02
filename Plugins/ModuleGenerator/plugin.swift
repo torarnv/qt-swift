@@ -7,35 +7,37 @@ import PackagePlugin
 @main
 struct ModuleGenerator: BuildToolPlugin {
     func createBuildCommands(context: PluginContext, target: Target) throws -> [Command] {
-        guard let qt = QtPaths(context: context) else {
-            Diagnostics.error("Unable to locate Qt system libraries\n")
-            #if canImport(XcodeProjectPlugin)
-                print(
-                    """
-                    Please install Qt, and point your build to it by quitting Xcode and running
-
-                        open --env PKG_CONFIG_PATH=<…> -a Xcode
-
-                    if Qt is installed outside of the system pkg-config location.
-                    """)
-            #else
-                Diagnostics.warning(
-                    """
-                    Please install Qt, and point your build to it via
-
-                        swift build --pkg-config-path <…>
-
-                    if Qt is installed outside of the system pkg-config location.
-                    """)
-            #endif
-            return []
-        }
-
         guard target.name.hasSuffix("Module") else {
             Diagnostics.error("Module generator target '\(target.name)' must be named QtFooModule\n")
             return []
         }
         let module = String(target.name.dropLast("Module".count))
+
+        guard let qt = QtPaths(context: context) else {
+            if module == "QtCore" {
+                Diagnostics.error("Unable to locate Qt system libraries\n")
+                #if canImport(XcodeProjectPlugin)
+                    print(
+                        """
+                        Please install Qt, and point your build to it by quitting Xcode and running
+
+                            open --env PKG_CONFIG_PATH=<…> -a Xcode
+
+                        if Qt is installed outside of the system pkg-config location.
+                        """)
+                #else
+                    Diagnostics.warning(
+                        """
+                        Please install Qt, and point your build to it via
+
+                            swift build --pkg-config-path <…>
+
+                        if Qt is installed outside of the system pkg-config location.
+                        """)
+                #endif
+            }
+            return []
+        }
 
         // Run module generator, which generates a module map and API notes
         // for the target's Qt module, and symlinks the Qt headers into a
