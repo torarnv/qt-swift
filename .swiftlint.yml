@@ -16,6 +16,8 @@ disabled_rules:
   - force_try
 identifier_name:
   excluded: [qt, eq]
+file_length:
+  warning: 1000
 function_body_length:
   warning: 80
 large_tuple:
