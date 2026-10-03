@@ -6,10 +6,16 @@ import QtWidgets
 @main
 struct HelloWidgets: QtApplication {
     init() {
-        let widget = QSizeGrip(nil)
+        let title: QString = "Hello 🌍 from Qt \(QLibraryInfo.version())"
+
         #if compiler(>=6.5)
-            widget.setWindowTitle("Hello 🌍 from Qt \(QLibraryInfo.version())")
+            let widget = QWidget()
+            widget.setWindowTitle(title)
+        #else
+            let widget = QSizeGrip(nil)
+            unsafeBitCast(widget, to: QWidget.self).setWindowTitle(title)
         #endif
+
         widget.resize(400, 300)
         widget.show()
     }

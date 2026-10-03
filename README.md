@@ -124,11 +124,10 @@ print(QString("Hællø 🌍"))
 * Swift's C++ importer eagerly imports members, resulting in import cycles
   * For Swift 6.5 the default has been changed to import members lazily
   * Ealier toolchains need to explicitly set `.enableExperimentalFeature("ImportCxxMembersLazily")`
-* Swift's C++ importer does not import constructors with optional arguments in reference types
+* Swift 6.4 does not import constructors with optional arguments in reference types
+  ([swift#92685](https://github.com/swiftlang/swift/pull/92685))
   * These are very common in Qt, due to the default parent of e.g. `QObject(QObject *parent = nullptr)`
-  * Constructors with non-optional arguments are imported as regular `init`
-  * As a workaround, build a custom Swift toolchain with
-    [swift#92685](https://github.com/swiftlang/swift/pull/92685) applied
+  * The fix is in Swift main snapshots, so please use a recent snapshot if possible
 * Swift 6.4 cannot upcast a derived reference type to its base class, e.g. `QWidget` to `QObject`
   ([swift#80231](https://github.com/swiftlang/swift/issues/80231))
   * This makes APIs taking a base class pointer unreachable from a subclass-typed value

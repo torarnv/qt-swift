@@ -7,12 +7,15 @@ import QtQuick
 @main
 struct HelloQuick: QtApplication {
     init() {
-        let quickView = QQuickView(nil, nil)
+        let title: QString = "Hello 🌍 from Qt \(QLibraryInfo.version())"
 
         #if compiler(>=6.5)
-            quickView.setTitle("Hello 🌍 from Qt \(QLibraryInfo.version())")
+            let quickView = QQuickView()
+            quickView.setTitle(title)
             quickView.setResizeMode(QQuickView.SizeRootObjectToView)
         #else
+            let quickView = QQuickView(nil, nil)
+            unsafeBitCast(quickView, to: QWindow.self).setTitle(title)
             quickView.setResizeMode(QQuickView.ResizeMode(rawValue: 1))
         #endif
 
