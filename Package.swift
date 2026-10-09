@@ -55,10 +55,12 @@ package.targets += [
     .systemLibrary(
         name: "Locate Qt",
         path: "Sources",
-        pkgConfig: "Qt6Platform"
-            // Intentionally no providers, as doing so makes SwiftPM pick
-            // up Qt from Homebrew even if it's installed with --skip-link,
-            // and we give our own instructions if Qt is not found anyways.
+        pkgConfig: "Qt6Platform",
+        providers: [
+            .brew(["qt"]),
+            .apt(["qt6-*-dev"]),
+            .yum(["qt6-*-devel"])
+        ]
     ),
     // A module generator build tool plugin that can produce module maps
     // and API notes for each module, thanks to experimentalCGen.
