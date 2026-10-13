@@ -105,9 +105,8 @@ struct HelloWidgets: QtApplication {
 string literals and interpolation:
 
 ```swift
-let title: QString = "Hello from Qt \(6) 👋🏻"
-let text = String(title)
-print(QString("Hællø 🌍"))
+window.setTitle("Hello 🌍 from Qt \(QLibraryInfo.version())")
+print(window.title())
 ```
 
 ## Known Issues
